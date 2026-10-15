@@ -94,5 +94,19 @@ historical response transcripts, and local service configuration are outside thi
 public snapshot. Sample answers are deliberately visible for grader debugging;
 the public examples are not held-out evaluation data.
 
+## Local maintenance and publication
+
+Within the full research workspace, this repository lives at
+`benchmark/research-agent-eval/`. The surrounding `benchmark/` directory holds the
+original research tasks, source materials, pilot records, and design decisions.
+The `research-agent-eval/` subfolder is a self-contained Git repository for public
+code, documentation, and demonstrations.
+
+Select and review material before transferring it into this repository; changes
+in the surrounding workspace are not synchronized automatically. Run Git review,
+commit, and push operations from this repository root. A standalone clone is
+sufficient to run all public examples and does not require the surrounding
+research workspace.
+
 Author: [Xingwei](https://github.com/Xingwei0724), Computational Mathematics,
 Beijing Normal University.
