@@ -1,0 +1,17 @@
+{
+  "version": "synthetic-evidence-boundary-v1",
+  "synthetic": true,
+  "automaticMax": 30,
+  "humanMax": 70,
+  "humanScore": null,
+  "instructions": "Review free prose and its relation to cited evidence. Give each criterion 0, 5, or 10 points with an answer pointer, source lines, and a reason. Mechanical passage does not imply scientific correctness. Do not infer a real model ranking from these authored responses.",
+  "criteria": [
+    {"id": "conditional-scope", "max": 10, "full": "Treats the configuration as assumed for the listed rows; does not claim those assumptions establish a general theorem."},
+    {"id": "finite-observation", "max": 10, "full": "Distinguishes three invented records from a theorem uniform in size or tolerance."},
+    {"id": "scaling-boundary", "max": 10, "full": "Recognizes that counts without timings or worker variation do not establish parallel scalability."},
+    {"id": "conclusion-consistency", "max": 10, "full": "The assessment and free-text conclusion agree with the controlled fields and the evidence."},
+    {"id": "evidence-support", "max": 10, "full": "Explains why the cited material supports the limited conclusion; citation existence alone is insufficient."},
+    {"id": "uncertainty", "max": 10, "full": "Identifies additional theoretical or computational evidence needed for broader claims."},
+    {"id": "synthetic-status", "max": 10, "full": "Explicitly retains the fictional status of the data and avoids presenting it as a real experiment or solver result."}
+  ]
+}

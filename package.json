@@ -1,0 +1,13 @@
+{
+  "name": "research-agent-eval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An exploratory prototype for evidence-aware evaluation of research workflows.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node protocol/validate.mjs",
+    "test": "node --test",
+    "demo": "node scripts/demo.mjs"
+  }
+}

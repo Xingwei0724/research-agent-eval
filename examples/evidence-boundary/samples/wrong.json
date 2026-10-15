@@ -1,0 +1,22 @@
+{
+  "configuration": {
+    "method": "Example-J",
+    "tolerance": 0.000001,
+    "assumptions": ["fixed-matrix-per-run", "zero-initial-guess"],
+    "citation": {"file": "fixtures/study-note.md", "start": 4, "end": 5, "quote": "Method: Example-J.\nEach row assumes a matrix held fixed during that run, a zero initial guess, and tolerance 0.000001."}
+  },
+  "observations": {
+    "kind": "measured",
+    "sizes": [8, 16, 32],
+    "iterations": [3, 3, 3],
+    "citation": {"file": "fixtures/pilot-runs.json", "start": 6, "end": 8, "quote": "    {\"size\": 8, \"iterations\": 3},\n    {\"size\": 16, \"iterations\": 3},\n    {\"size\": 32, \"iterations\": 4}"}
+  },
+  "source_limits": {
+    "uniform_bound": "established",
+    "parallel_scaling": "established",
+    "citation": {"file": "fixtures/study-note.md", "start": 6, "end": 7, "quote": "These three invented rows do not establish a bound uniform in problem size or tolerance.\nNo timings or parallel scaling measurements are included."}
+  },
+  "claim_assessment": "supported",
+  "conclusion": "The measured counts are constant, which proves uniform complexity and parallel scalability for all problem sizes and tolerances.",
+  "uncertainties": ["None."]
+}

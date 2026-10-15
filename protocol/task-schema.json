@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/compute-math-benchmark/task-protocol-v0.schema.json",
+  "title": "Computational Mathematics Research Benchmark Task Protocol v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "protocolVersion", "id", "title", "status", "capabilityTags", "domainTags",
+    "evaluationLayers", "workflowSteps", "protocolFixtures", "sourceEvidence", "scoring", "outputSchema"
+  ],
+  "properties": {
+    "protocolVersion": {"const": "0.1"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {"enum": ["exploratory", "pilot", "validated", "rewrite", "retired", "public"]},
+    "capabilityTags": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "domainTags": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "evaluationLayers": {"type": "array", "items": {"enum": ["model", "configuration"]}, "minItems": 1},
+    "workflowSteps": {
+      "type": "array", "minItems": 2,
+      "items": {"enum": ["read", "locate", "derive", "check-assumptions", "check-implementation", "transfer", "validate-numerics", "record", "conclude"]}
+    },
+    "protocolFixtures": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["path", "sha256", "role"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "role": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "sourceEvidence": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["fixture", "location", "claim"],
+        "properties": {
+          "fixture": {"type": "string"},
+          "location": {"type": "string", "minLength": 1},
+          "claim": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "scoring": {
+      "type": "object", "required": ["automatic", "human", "hardFailures"],
+      "properties": {
+        "automatic": {"type": "array", "items": {"type": "string"}},
+        "human": {"type": "array", "items": {"type": "string"}},
+        "hardFailures": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "outputSchema": {
+      "type": "object", "required": ["required"],
+      "properties": {"required": {"type": "array", "items": {"type": "string"}, "minItems": 1}}
+    },
+    "budget": {"type": "object", "additionalProperties": true}
+  }
+}

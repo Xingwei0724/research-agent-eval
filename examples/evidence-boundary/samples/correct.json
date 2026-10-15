@@ -1,0 +1,22 @@
+{
+  "configuration": {
+    "method": "Example-J",
+    "tolerance": 0.000001,
+    "assumptions": ["fixed-matrix-per-run", "zero-initial-guess"],
+    "citation": {"file": "fixtures/study-note.md", "start": 4, "end": 5, "quote": "Method: Example-J.\nEach row assumes a matrix held fixed during that run, a zero initial guess, and tolerance 0.000001."}
+  },
+  "observations": {
+    "kind": "synthetic",
+    "sizes": [8, 16, 32],
+    "iterations": [3, 3, 4],
+    "citation": {"file": "fixtures/pilot-runs.json", "start": 6, "end": 8, "quote": "    {\"size\": 8, \"iterations\": 3},\n    {\"size\": 16, \"iterations\": 3},\n    {\"size\": 32, \"iterations\": 4}"}
+  },
+  "source_limits": {
+    "uniform_bound": "not-established",
+    "parallel_scaling": "not-measured",
+    "citation": {"file": "fixtures/study-note.md", "start": 6, "end": 7, "quote": "These three invented rows do not establish a bound uniform in problem size or tolerance.\nNo timings or parallel scaling measurements are included."}
+  },
+  "claim_assessment": "not-established",
+  "conclusion": "The fixtures report three invented counts, 3, 3, and 4, under a stated configuration. Fixed matrices during each run, zero initial guesses, and one tolerance describe these rows; they are not a proof of a uniform bound. These fictional records provide no coverage of other sizes or tolerances, and no timings or worker variation support a parallel-scaling claim.",
+  "uncertainties": ["A general bound requires a separate argument with explicit assumptions.", "Actual, reproducible runs with varied sizes, tolerances, and worker counts would be needed for an empirical scaling study."]
+}

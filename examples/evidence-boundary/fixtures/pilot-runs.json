@@ -1,0 +1,10 @@
+{
+  "kind": "synthetic",
+  "method": "Example-J",
+  "tolerance": 0.000001,
+  "rows": [
+    {"size": 8, "iterations": 3},
+    {"size": 16, "iterations": 3},
+    {"size": 32, "iterations": 4}
+  ]
+}

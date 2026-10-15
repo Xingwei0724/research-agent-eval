@@ -1,0 +1,47 @@
+{
+  "protocolVersion": "0.1",
+  "id": "synthetic-evidence-boundary",
+  "title": "Synthetic evidence boundaries: controlled facts, exact citations, and human judgment",
+  "status": "exploratory",
+  "synthetic": true,
+  "provenance": "New, original fictional fixtures and hand-authored calibration responses for the public progress snapshot. No model calls or solver measurements.",
+  "promptFile": "prompt.md",
+  "grader": "../../src/grade-evidence.mjs",
+  "rubricFile": "rubric.json",
+  "humanJudge": true,
+  "capabilityTags": ["evidence-location", "field-binding", "numerical-evidence-boundary"],
+  "domainTags": ["synthetic-research-workflow", "iterative-solver-records"],
+  "evaluationLayers": ["model"],
+  "workflowSteps": ["read", "locate", "check-assumptions", "validate-numerics", "conclude"],
+  "fixtures": ["fixtures/study-note.md", "fixtures/pilot-runs.json"],
+  "protocolFixtures": [
+    {
+      "path": "fixtures/study-note.md",
+      "sha256": "d6df8b55041c22736d820e56bfc1c156c6bc154db5e4a5841b4b4fd4cdd025ff",
+      "role": "original-synthetic-note"
+    },
+    {
+      "path": "fixtures/pilot-runs.json",
+      "sha256": "adc89080884ae01e348d8b60a0b897620a21b42dcd7fa4de19d1e1428eb6910b",
+      "role": "invented-calibration-records"
+    }
+  ],
+  "sourceEvidence": [
+    {"fixture": "fixtures/study-note.md", "location": "lines 4-5", "claim": "The fictional method, per-run assumptions, and fixed tolerance are explicitly stated."},
+    {"fixture": "fixtures/pilot-runs.json", "location": "lines 6-8", "claim": "The three invented sizes and iteration counts are 8/16/32 and 3/3/4."},
+    {"fixture": "fixtures/study-note.md", "location": "lines 6-7", "claim": "The note withholds a uniform bound and reports no timing or parallel-scaling measurements."}
+  ],
+  "scoring": {
+    "automatic": ["required-structure", "controlled-source-facts", "exact-quote", "field-bound-citation"],
+    "human": ["conditional-scope", "finite-observation", "scaling-boundary", "conclusion-consistency", "evidence-support", "uncertainty", "synthetic-status"],
+    "hardFailures": ["invalid-json", "wrong-source-fact", "invalid-citation", "misbound-citation"],
+    "automaticMax": 30,
+    "humanMax": 70,
+    "max": 100,
+    "aggregation": "Automatic defects are reported as quality flags and component scores. No overall score or scientific verdict is computed without the separate human review."
+  },
+  "outputSchema": {
+    "required": ["configuration", "observations", "source_limits", "claim_assessment", "conclusion", "uncertainties"]
+  },
+  "budget": {"networkRequired": false, "modelCallsInCalibration": 0}
+}

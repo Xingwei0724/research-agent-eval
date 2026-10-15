@@ -1,0 +1,22 @@
+{
+  "configuration": {
+    "method": "Example-J",
+    "tolerance": 0.000001,
+    "assumptions": ["fixed-matrix-per-run", "zero-initial-guess"],
+    "citation": {"file": "fixtures/study-note.md", "start": 4, "end": 5, "quote": "Method: Example-J.\nEach row assumes a matrix held fixed during that run, a zero initial guess, and tolerance 0.000001."}
+  },
+  "observations": {
+    "kind": "synthetic",
+    "sizes": [8, 16, 32],
+    "iterations": [3, 3, 4],
+    "citation": {"file": "fixtures/pilot-runs.json", "start": 2, "end": 2, "quote": "  \"kind\": \"synthetic\","}
+  },
+  "source_limits": {
+    "uniform_bound": "not-established",
+    "parallel_scaling": "not-measured",
+    "citation": {"file": "fixtures/study-note.md", "start": 6, "end": 7, "quote": "These three invented rows do not establish a bound uniform in problem size or tolerance.\nNo timings or parallel scaling measurements are included."}
+  },
+  "claim_assessment": "not-established",
+  "conclusion": "The three invented records describe only a finite set under the listed assumptions. They do not establish a uniform theorem or parallel scalability; a separate argument and an empirical study would be required.",
+  "uncertainties": ["The records are fictional and no timing or worker-count study is available."]
+}
